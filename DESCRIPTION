@@ -1,0 +1,22 @@
+Package: junk
+Type: Package
+Title: Miscellaneous functions
+Version: 0.1.0
+Authors@R: person("Jeffrey", "Arnold", email = "jeffrey.arnold@gmail.com",
+                   role  = c("aut", "cre"))
+Description: Miscellaneous functions, mostly related to the tidyverse.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (> 3.0.0)
+Imports:
+    assertthat,
+    dplyr,
+    lazyeval,
+    ggplot2,
+    magrittr,
+    purrr,
+    scales
+RoxygenNote: 5.0.1
+Suggests: testthat
