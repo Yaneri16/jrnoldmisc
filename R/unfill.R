@@ -5,6 +5,8 @@
 #'   then keep the last value in the run. If \code{"middle"}, keep the middle
 #'   value.
 #' @param value The value to use to unfill the vector.
+#' @return The vector \code{x} with the elements other than those
+#'   specified in \code{tokeep}, replaced with \code{value}.
 #' @export
 unfill <- function(x, tokeep = c("first", "last", "middle"), value = NA) {
   runs <- rle(x)
