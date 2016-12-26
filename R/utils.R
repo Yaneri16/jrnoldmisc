@@ -8,7 +8,7 @@ append_df <- function(x, values, after = length(x)) {
 
 # From tidyr:::append_col
 append_col <- function(x, col, name, after = length(x)) {
-  append_df(x, setNames(list(col), name), after = after)
+  append_df(x, set_names(list(col), name), after = after)
 }
 
 # From tidyr:::col_name

@@ -1,11 +1,11 @@
-Package: junk
+Package: rubbish
 Type: Package
 Title: Miscellaneous functions
 Version: 0.1.0
 Authors@R: person("Jeffrey", "Arnold", email = "jeffrey.arnold@gmail.com",
                    role  = c("aut", "cre"))
-Description: Miscellaneous functions, mostly related to the tidyverse.
-License: What license is it under?
+Description: Miscellaneous functions, mostly tidyverse compliant.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
@@ -17,6 +17,7 @@ Imports:
     ggplot2,
     magrittr,
     purrr,
-    scales
+    scales,
+    stringr
 RoxygenNote: 5.0.1
 Suggests: testthat

@@ -1,4 +1,4 @@
 library(testthat)
-library(junk)
+library(rubbish)
 
-test_check("junk")
+test_check("rubbish")
