@@ -1,9 +1,12 @@
 #' Truncate or censor vectors
 #'
-#' \code{truncate} will truncate a vector with replacing elements greater or less than
+#' \code{truncare} will truncate a vector with replacing elements greater or less than
 #' given bounds with replacement values (missing by default).
 #' \code{censor} is a special case that uses the upper and bound values as the
 #' replacements.
+#'
+#' @details  The more intuitive name \code{truncate} was not chosen, because a base function \code{\link[base]{truncate}}
+#' already has that name. Truncare is the Latin origin of truncate.
 #'
 #' @param x A vector
 #' @param left,right Boundary values for truncation
@@ -12,7 +15,7 @@
 #' @param newleft,newright Value to replace truncated elements
 #' @return Vector of the same size as \code{x}, with truncated elements replaced.
 #' @export
-truncate <- function(x,
+truncare <- function(x,
                      left = -Inf,
                      right = Inf,
                      newleft = NA,
@@ -27,10 +30,10 @@ truncate <- function(x,
 }
 
 #' @export
-#' @rdname truncate
+#' @rdname truncare
 censor <- function(x, left = -Inf, right = Inf) {
-  truncate(x, left = left, right = right, geq = TRUE, leq = TRUE,
-           newleft = left, newright = right)
+  truncare(x, left = left, right = right, geq = TRUE, leq = TRUE,
+       newleft = left, newright = right)
 }
 
 #' Does numeric vector fall in a range
@@ -45,7 +48,7 @@ censor <- function(x, left = -Inf, right = Inf) {
 #' @param na.rm If \code{TRUE} return \code{FALSE} for \code{NA} or \code{NaN}
 #' @return A logical vector that is \code{TRUE} if the value falls in the interval.
 #' @export
-between2 <- function(x, left = -Inf, right = Inf,
+betwixt <- function(x, left = -Inf, right = Inf,
                      leq = TRUE, geq = TRUE, na.rm = TRUE) {
   lt <- if (leq) `<=` else `<`
   gt <- if (geq) `>=` else `>`

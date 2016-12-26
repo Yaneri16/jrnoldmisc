@@ -57,16 +57,16 @@ to_dummies_.data.frame <- function(.data, col,
                                    contr = NULL,
                                    na_level = FALSE,
                                    na_varname = NULL) {
-  stopifnot(is.character(col), length(col) == 1)
+  assert_that(is.string(col))
   # do this so that the column keeps any factor attributes
-  if (! is.factor(.data[[col]])) {
+  if (!is.factor(.data[[col]])) {
     x <- as.factor(as.character(.data[[col]]))
   } else {
     x <- .data[[col]]
   }
   xlvls <- levels(x)
   if (is.null(contr)) {
-    if (! has_attr(x, "contrasts")) {
+    if (!has_attr(x, "contrasts")) {
       contr <- contr.treatment(xlvls, contrasts = drop_level)
     } else {
       contr <- attr(x, "contrasts")
@@ -84,7 +84,7 @@ to_dummies_.data.frame <- function(.data, col,
   } else {
     var_names <- paste0(col, xlvls)
   }
-  if (! na_level) {
+  if (!na_level) {
     if (!is.null(na_varname)) {
       if (is.function(na_varname)) {
         na_x <- na_varname(col)
@@ -106,7 +106,7 @@ to_dummies_.data.frame <- function(.data, col,
 }
 
 which_w_default <- function(x, y, default = NA) {
-  ret <- x[! is.na(y) & as.logical(y)]
+  ret <- x[!is.na(y) & as.logical(y)]
   if (length(ret) == 0) ret <- default
   else ret <- ret[1]
   ret
@@ -155,7 +155,7 @@ from_dummies_.data.frame <- function(.data, col, ..., .dots,
   dots <- lazyeval::all_dots(.dots, ...)
   from <- select_vars_(names(.data), dots)
   catvar <-
-    apply(.data[ , from, drop = FALSE], 1,
+    apply(.data[, from, drop = FALSE], 1,
           function(x) which_w_default(from, x, default = default))
   .data <- append_col(.data, catvar, col)
   if (remove) {
