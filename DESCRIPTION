@@ -13,6 +13,7 @@ Depends:
 Imports:
     assertthat,
     dplyr,
+    forcats,
     lazyeval,
     ggplot2,
     magrittr,

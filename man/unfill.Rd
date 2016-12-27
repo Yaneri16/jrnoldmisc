@@ -15,6 +15,10 @@ value.}
 
 \item{value}{The value to use to unfill the vector.}
 }
+\value{
+The vector \code{x} with the elements other than those
+  specified in \code{tokeep}, replaced with \code{value}.
+}
 \description{
 Unfill a vector
 }
