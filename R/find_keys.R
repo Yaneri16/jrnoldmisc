@@ -1,5 +1,7 @@
 #' @importFrom dplyr n_groups group_by_
 is_key_ <- function(.data, ..., .dots) {
+  # Alternative implementation could use distinct
+  # or count
   if (nrow(.data) == 0) {
     FALSE
   } else {

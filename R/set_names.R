@@ -1,7 +1,7 @@
 seq_names <- function(.x, .f, ...) {
   assert_that(is.string(.f) | is.function(.f))
   if (is.character(.f)) {
-    sprintf(.f, .x)
+    sprintf(.f, .x, ...)
   } else {
     as_function(.f)(.x, ...)
   }

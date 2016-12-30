@@ -9,9 +9,11 @@ fct_replace(f, pattern, replacement, all = TRUE)
 \arguments{
 \item{f}{A factor}
 
-\item{.f}{A function that takes the current levels as its first argument.}
+\item{pattern, replacement}{Pattern and replacement regular expressions.
+See \code{\link[stringr]{str_replace}}.}
 
-\item{...}{Arguments passed to \code{.f}.}
+\item{all}{If \code{TRUE}, then use \code{str_replace_all} to replace
+names, else use \code{str_replace}.}
 }
 \value{
 A factor vector with the values of \code{f} and transformed levels.

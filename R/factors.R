@@ -3,8 +3,10 @@
 #' Change the factor levels by a function of their current values.
 #'
 #' @param f A factor
-#' @param .f A function that takes the current levels as its first argument.
-#' @param ... Arguments passed to \code{.f}.
+#' @param pattern,replacement Pattern and replacement regular expressions.
+#'   See \code{\link[stringr]{str_replace}}.
+#' @param all If \code{TRUE}, then use \code{str_replace_all} to replace
+#'   names, else use \code{str_replace}.
 #' @return A factor vector with the values of \code{f} and transformed levels.
 #' @export
 fct_replace <- function(f, pattern, replacement, all = TRUE) {
