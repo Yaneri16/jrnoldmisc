@@ -1,18 +1,18 @@
-#' @importFrom dplyr n_groups group_by_
-is_key_ <- function(.data, ..., .dots) {
-  # Alternative implementation could use distinct
-  # or count
-  if (nrow(.data) == 0) {
-    FALSE
-  } else {
-    n <- n_groups(group_by_(.data, ..., .dots = .dots))
-    n == nrow(.data)
-  }
-}
-
-is_key <- function(.data, ...) {
-  is_key_(.data, .dots = lazyeval::lazy_dots(...))
-}
+# #' @importFrom dplyr n_groups group_by_
+# is_key_ <- function(.data, ..., .dots) {
+#   # Alternative implementation could use distinct
+#   # or count
+#   if (nrow(.data) == 0) {
+#     FALSE
+#   } else {
+#     n <- n_groups(group_by_(.data, ..., .dots = .dots))
+#     n == nrow(.data)
+#   }
+# }
+#
+# is_key <- function(.data, ...) {
+#   is_key_(.data, .dots = lazyeval::lazy_dots(...))
+# }
 
 # find_key_ <- function(.data, args, .maxp = NULL) {
 #   variables <- select_vars(args)

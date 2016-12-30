@@ -1,4 +1,4 @@
-context("set_names_seq")
+context("set_names")
 
 x <- c("a", "b", "c")
 X <- matrix(1:6, nrow = 2)
