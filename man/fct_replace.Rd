@@ -2,23 +2,26 @@
 % Please edit documentation in R/factors.R
 \name{fct_replace}
 \alias{fct_replace}
+\alias{fct_replace_all}
 \title{Transform levels of a factor with a regular expression}
 \usage{
-fct_replace(f, pattern, replacement, all = TRUE)
+fct_replace(f, pattern, replacement)
+
+fct_replace_all(f, pattern, replacement)
 }
 \arguments{
 \item{f}{A factor}
 
 \item{pattern, replacement}{Pattern and replacement regular expressions.
 See \code{\link[stringr]{str_replace}}.}
-
-\item{all}{If \code{TRUE}, then use \code{str_replace_all} to replace
-names, else use \code{str_replace}.}
 }
 \value{
 A factor vector with the values of \code{f} and transformed levels.
 }
 \description{
-Change the factor levels by a function of their current values.
+Replace the factor levels with a regular expression.
+\code{fct_replace} replaces the factor levels using
+\code{\link[stringr]{str_replace}}, while \code{fct_replace_all} uses
+\code{\link[stringr]{str_replace_all}}
 }
 

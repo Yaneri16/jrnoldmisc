@@ -10,13 +10,14 @@
 #' @export
 unfill <- function(x, tokeep = c("first", "last", "middle"), value = NA) {
   runs <- rle(x)
+  tokeep <- match.arg(tokeep)
   if (tokeep == "first") {
-    idxs <- cumsum(c(1L, runs[-length(runs)]))
+    idxs <- cumsum(c(1L, runs[["lengths"]][-length(runs[["lengths"]])]))
   } else if (tokeep == "last") {
-    idxs <- cumsum(runs)
+    idxs <- cumsum(runs[["lengths"]])
   } else if (tokeep == "middle") {
-    starts <- cumsum(c(1L, runs[-length(runs)]))
-    ends <- cumsum(runs)
+    starts <- cumsum(c(1L, runs[["lengths"]][-length(runs[["lengths"]])]))
+    ends <- cumsum(runs[["lengths"]])
     idxs <- (starts + ends) %/% 2L
   }
   x[!(seq_along(x) %in% idxs)] <- value

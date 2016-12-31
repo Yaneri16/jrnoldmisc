@@ -4,7 +4,7 @@
 \alias{fct_seq}
 \title{Transform levels of a factor with a function of their index}
 \usage{
-fct_seq(f, .f, ...)
+fct_seq(f, .f = "\%d", ...)
 }
 \arguments{
 \item{f}{A factor}

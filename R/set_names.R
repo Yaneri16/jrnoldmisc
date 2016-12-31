@@ -52,8 +52,14 @@ set_names_map <- function(x, .f, ...) {
 #'   else use \code{\link{str_replace}}.
 #' @return Return table with renamed variables
 #' @export
-set_names_sub <- function(x, pattern, replacement, all = TRUE) {
+names_replace <- function(x, pattern, replacement, all = TRUE) {
   assert_that(is.flag(all))
-  FUN <- if (all) str_replace else str_replace_all
-  set_names_map(x, FUN, pattern, replacement)
+  set_names_map(x, str_replace, pattern, replacement)
+}
+
+#' @rdname names_replace
+#' @export
+names_replace_all <- function(x, pattern, replacement, all = TRUE) {
+  assert_that(is.flag(all))
+  set_names_map(x, str_replace_all, pattern, replacement)
 }

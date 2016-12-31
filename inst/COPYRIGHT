@@ -1,0 +1,18 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: rubbish
+Upstream-Contact: Jeffrey Arnold <jeffrey.arnold@gmail.com>
+Source: https://github.com/jrnold/rubbish
+
+Files: *
+Copyright: 2016 Jeffrey Arnold
+License: MIT
+
+Files: R/utils.R
+Copyright: 2014 Hadley Wickham and RStudio
+License: MIT
+Comment: Code from the tidyr package for several functions.
+
+Files: R/complete_cases.R
+Copyright: 2016 Jan Schutlz
+License: MIT
+Comment: Code posted in StackOverflow Comment http://stackoverflow.com/a/37031161/227406

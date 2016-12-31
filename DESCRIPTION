@@ -2,9 +2,22 @@ Package: rubbish
 Type: Package
 Title: Miscellaneous functions
 Version: 0.1.0
-Authors@R: person("Jeffrey", "Arnold", email = "jeffrey.arnold@gmail.com",
-                   role  = c("aut", "cre"))
-Description: Miscellaneous functions, mostly tidyverse compliant.
+Authors@R: c(person("Jeffrey", "Arnold",
+                     email = "jeffrey.arnold@gmail.com",
+                     role  = c("aut", "cre")),
+             person("Hadley", "Wickham", role = "cph",
+                    comment = "some code from tidyr"),
+             person("RStudio", role = "cph", 
+                    comment = "some code from tidyr"),
+             person("Jan", "Schultz", role = "cph",
+                     comment = "code for complete_cases"))
+Description: Miscellaneous functions, mostly tidyverse related.
+  Set names, table names, or factor levels by function, regular expression,
+  or with sequential numbering. Filter complete cases. A select helper function
+  that uses globbing instead of regular expressions to select variables.
+  Truncate or censor values in vectors. Flexible "between" function. log2 scales
+  for ggplot2.
+Copyright: file COPYRIGHTS
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
