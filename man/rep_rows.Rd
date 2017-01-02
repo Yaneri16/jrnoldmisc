@@ -4,7 +4,7 @@
 \alias{rep_rows}
 \title{Replicate rows of a data frame}
 \usage{
-rep_rows(.data, times = NA, each = NA)
+rep_rows(.data, times = 1, each = NA)
 }
 \arguments{
 \item{.data}{A data frame}
@@ -18,5 +18,11 @@ A data frame with replicated rows
 }
 \description{
 Replicate rows of a data frame
+}
+\examples{
+require("tibble")
+x <- tibble(a = 1:2, b = 3:4)
+rep_rows(x, 2)
+rep_rows(x, each = 2)
 }
 
