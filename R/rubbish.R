@@ -1,10 +1,10 @@
 #' @importFrom ggplot2 scale_x_continuous scale_y_continuous
 #' @importFrom stats contr.treatment model.matrix setNames
 #' @importFrom dplyr select_vars_ select_ vars select_vars filter
-#' @importFrom dplyr distinct rename_ matches current_vars
+#' @importFrom dplyr distinct rename_ matches current_vars filter_ everything
 #' @importFrom stringr str_replace str_replace_all
 #' @importFrom purrr flatten keep cross_n "%||%" set_names as_function
-#' @importFrom purrr map rerun
+#' @importFrom purrr map rerun reduce
 #' @importFrom stats complete.cases
 #' @importFrom forcats lvls_revalue
 #' @importFrom utils glob2rx
