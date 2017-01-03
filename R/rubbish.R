@@ -4,7 +4,7 @@
 #' @importFrom dplyr distinct rename_ matches current_vars filter_ everything
 #' @importFrom stringr str_replace str_replace_all
 #' @importFrom purrr flatten keep cross_n "%||%" set_names as_function
-#' @importFrom purrr map rerun reduce
+#' @importFrom purrr map rerun reduce map_df
 #' @importFrom stats complete.cases
 #' @importFrom forcats lvls_revalue
 #' @importFrom utils glob2rx
