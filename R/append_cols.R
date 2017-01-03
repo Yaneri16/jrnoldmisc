@@ -1,4 +1,4 @@
-append_cols <- function(.data, expr, .names = NULL) {
+ append_cols <- function(.data, expr, .names = NULL) {
   append_cols_(.data, lazyeval::lazy(expr), .names = .names)
 }
 
