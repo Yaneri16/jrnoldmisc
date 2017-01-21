@@ -5,9 +5,9 @@
 \alias{select_col_}
 \title{Select single column from a table}
 \usage{
-select_col(.data, col)
+select_col(.data, col, nm = NULL)
 
-select_col_(.data, col)
+select_col_(.data, col, nm = NULL)
 }
 \arguments{
 \item{.data}{A data frame}
@@ -15,12 +15,20 @@ select_col_(.data, col)
 \item{col}{In \code{select_col} an unquoted
 column name. In \code{select_col_}, the
 column name as a string.}
+
+\item{nm}{If non-\code{NULL}, names to apply to the vector.
+In \code{select_col} an unquoted column name.
+In \code{select_col_}, the column name as a string.}
 }
 \description{
 Select a single column from a table and
 return as a vector. This is pretty-much
 just a wrapper for `[[`, but is more
 descriptive and pipe friendly.
+}
+\details{
+If the \code{nm} argument is used, then this
+can be seen as the inverse of \code{\link[tibble]{enframe}}.
 }
 \examples{
 select_col(iris, Species)
