@@ -35,5 +35,6 @@ Imports:
     stringr
 RoxygenNote: 5.0.1
 Suggests:
+    pkgdown,
     testthat,
     tibble
