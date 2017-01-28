@@ -47,19 +47,3 @@ NULL
   z[is.na(z)] <- FALSE
   z
 }
-
-#' Replace NA with FALSE
-#'
-#' @param x A logical vector
-#' @return The vector \code{x} with any \code{NA} values replaced with \code{FALSE}
-#'
-#' @export
-#' @examples
-#' x <- c(1, 2, NA) < 5
-#' x
-#' na2f(x)
-na2f <- function(x) {
-  z <- as.logical(x)
-  z[is.na(z)] <- NA
-  z
-}
