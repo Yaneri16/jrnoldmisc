@@ -17,9 +17,12 @@
 #' @importFrom purrr set_names
 #' @importFrom purrr as_function
 #' @importFrom purrr map
+#' @importFrom purrr map_lgl
 #' @importFrom purrr rerun
 #' @importFrom purrr reduce
 #' @importFrom purrr map_df
+#' @importFrom purrr map2
+#' @importFrom purrr is_numeric
 #' @importFrom forcats lvls_revalue
 NULL
 
