@@ -22,6 +22,7 @@ install_github("jrnold/rubbish")
 `censor`             Censor a vector
 `complete_cases`     Filter data frame by complete cases
 `fct_map`            Replace factor levels using a function
+`fct_remove`         Remove factor levels
 `fct_replace`        Replace factor levels using regular expressions
 `fct_seq`            Replace factor levels using a sequence-based pattern
 `filter_na`          Filter a table to remove rows with missing values

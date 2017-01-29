@@ -73,3 +73,33 @@ fct_seq <- function(f, .f = "%d", ...) {
   }
   lvls_revalue(f, new_levels)
 }
+
+# from forcats:::check_factor
+check_factor <- function(f) {
+  if (is.character(f)) {
+    factor(f)
+  }
+  else if (is.factor(f)) {
+    f
+  }
+  else {
+    stop("`f` must be a factor (or character vector).", call. = FALSE)
+  }
+}
+
+#' Remove levels from a factor
+#'
+#' Remove levels from a factor
+#'
+#' @seealso \code{\link[forcats]{fct_remove}} can also remove levels.
+#' @param f A factor
+#' @param lvls A character vector of levels to remove from the factor, and replace with \code{NA} values.
+#' @return A factor vector
+#' @export
+#' @examples
+#' x <- factor(c("apple", "bear", "banana", "deer"))
+#' fct_remove(x, c("apple", "banana"))
+fct_remove <- function(f, lvls) {
+  f <- check_factor(f)
+  factor(f, levels = setdiff(levels(f), as.character(lvls)))
+}
