@@ -1,3 +1,16 @@
+# copied from forcats:::check_factor
+check_factor <- function (f) {
+  if (is.character(f)) {
+    factor(f)
+  }
+  else if (is.factor(f)) {
+    f
+  }
+  else {
+    stop("`f` must be a factor (or character vector).", call. = FALSE)
+  }
+}
+
 .fct_replace <- function(f, pattern, replacement, all) {
   FUN <- if (all) str_replace_all else str_replace
   old_levels <- levels(f)
@@ -71,5 +84,29 @@ fct_seq <- function(f, .f = "%d", ...) {
   } else {
     new_levels <- .f(idx, ...)
   }
+  lvls_revalue(f, new_levels)
+}
+
+#' Remove levels from a factor
+#'
+#' Remove levels from a factor, meaning that observations with those levels
+#' are set to `NA`.
+#'
+#' @seealso \code{\link[forcats]{fct_recode}} which can
+#'   remove factor levels and \code{\link[forcats]{fct_explicit_na}} which
+#'   is the inverse, converting `NA` to a factor level.
+#' @param f A factor
+#' @param levels Character vector of levels to remove
+#' @return A factor
+#' @export
+#' @importFrom forcats lvls_revalue
+#' @examples
+#' f <- factor(c("Low", "Medium", "High",
+#'               "Refused to respond", "No response", "Not asked"))
+#' fct_remove(f, c("Refused to respond", "No response", "Not asked"))
+fct_remove <- function(f, levels = character()) {
+  f <- check_factor(f)
+  new_levels <- levels(f)
+  new_levels[new_levels %in% levels] <- NA_integer_
   lvls_revalue(f, new_levels)
 }

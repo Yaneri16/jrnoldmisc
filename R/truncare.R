@@ -15,6 +15,9 @@
 #' @param newleft,newright Value to replace truncated elements
 #' @return Vector of the same size as \code{x}, with truncated elements replaced.
 #' @export
+#' @examples
+#' truncare(1:10, left = 2, right = 5)
+#' censor(-5:5, 0, 4)
 truncare <- function(x,
                      left = -Inf,
                      right = Inf,
@@ -48,6 +51,9 @@ censor <- function(x, left = -Inf, right = Inf) {
 #' @param na.rm If \code{TRUE} return \code{FALSE} for \code{NA} or \code{NaN}
 #' @return A logical vector that is \code{TRUE} if the value falls in the interval.
 #' @export
+#' @examples
+#' betwixt(-2:4, 0, 3)
+#' betwixt(-2:4, 0, 3, leq = FALSE, geq = FALSE)
 betwixt <- function(x, left = -Inf, right = Inf,
                      leq = TRUE, geq = TRUE, na.rm = TRUE) {
   lt <- if (leq) `<=` else `<`

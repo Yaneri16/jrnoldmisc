@@ -23,6 +23,11 @@ The object \code{x} with its names (colnames, rownames) set.
 Set the names in vector with a pattern based on sequential numbering,
 e.g. \code{Var1}, \code{Var2}, ...
 }
+\examples{
+set_names_seq(1:5)
+set_names_seq(1:5, "X\%d")
+set_names_seq(1:5, function(i) stringr::str_c("Var_", i))
+}
 \seealso{
 \code{\link[stats]{setNames}}, \code{\link[purrr]{set_names}},
   \code{\link[magrittr]{set_colnames}}, \code{\link[magrittr]{set_colnames}}.

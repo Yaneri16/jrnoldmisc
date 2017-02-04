@@ -28,6 +28,7 @@ select_col <- function(.data, col, nm = NULL) {
 }
 
 #' @rdname select_col
+#' @importFrom assertthat is.string assert_that
 #' @export
 select_col_ <- function(.data, col, nm = NULL) {
   assert_that(is.string(col))

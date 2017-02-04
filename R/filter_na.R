@@ -13,13 +13,15 @@
 #' @return An object of the same class as \code{.data}.
 #' @export
 filter_na <- function(.data, ..., .all = FALSE) {
-  filter_na_(.data, .dots = lazyeval::lazy_dots(...), .all = .all)
+  filter_na_(.data, .dots = lazy_dots(...), .all = .all)
 }
 
 #' @rdname filter_na
 #' @export
+#' @importFrom lazyeval all_dots
+#' @importFrom dplyr everything
 filter_na_ <- function(.data, ..., .dots, .all = FALSE) {
-  dots <- lazyeval::all_dots(.dots, ...)
+  dots <- all_dots(.dots, ...)
   if (length(dots) == 0) {
     dots <- list(~ everything())
   }

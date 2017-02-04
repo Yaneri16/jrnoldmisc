@@ -24,4 +24,8 @@ A logical vector that is \code{TRUE} if the value falls in the interval.
 This is a shortcut for \code{x > lower & x < upper} and variants with equalities.
 This function is more flexible than \code{\link[dplyr]{between}}.
 }
+\examples{
+betwixt(-2:4, 0, 3)
+betwixt(-2:4, 0, 3, leq = FALSE, geq = FALSE)
+}
 

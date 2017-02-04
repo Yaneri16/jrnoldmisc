@@ -4,11 +4,27 @@
 #' @importFrom stats model.matrix
 #' @importFrom utils glob2rx
 #'
-#' @import dplyr
-#' @import stringr
-#' @import assertthat
+#'
+#' @importFrom assertthat is.flag
+#' @importFrom assertthat on_failure<-
+#' @importFrom dplyr arrange_
+#' @importFrom dplyr count_
+#' @importFrom dplyr current_vars
+#' @importFrom dplyr desc
+#' @importFrom dplyr distinct_
+#' @importFrom dplyr filter
+#' @importFrom dplyr filter_
+#' @importFrom dplyr matches
+#' @importFrom dplyr mutate_
+#' @importFrom dplyr rename_
+#' @importFrom dplyr select_
+#' @importFrom dplyr select_vars_
+#' @importFrom dplyr tbl
+#' @importFrom dplyr tbl_vars
+#' @importFrom dplyr ungroup
 #' @importFrom ggplot2 scale_x_continuous
 #' @importFrom ggplot2 scale_y_continuous
+#' @importFrom lazyeval lazy_dots
 #' @importFrom purrr flatten
 #' @importFrom purrr cross_n
 #' @importFrom purrr keep
@@ -20,6 +36,16 @@
 #' @importFrom purrr rerun
 #' @importFrom purrr reduce
 #' @importFrom purrr map_df
+#' @importFrom purrr map2
+#' @importFrom purrr map2_df
+#' @importFrom purrr map2_lgl
+#' @importFrom purrr map2_dbl
+#' @importFrom purrr map2_chr
+#' @importFrom purrr map2_int
+#' @importFrom purrr is_function
+#' @importFrom purrr is_character
+#' @importFrom stringr str_replace
+#' @importFrom stringr str_replace_all
 #' @importFrom forcats lvls_revalue
 NULL
 

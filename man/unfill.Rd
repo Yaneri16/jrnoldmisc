@@ -20,6 +20,13 @@ The vector \code{x} with the elements other than those
   specified in \code{tokeep}, replaced with \code{value}.
 }
 \description{
-Unfill a vector
+Replace repeated runs of a value in a vector with a single
+value.
+}
+\examples{
+unfill(c(rep("a", 3), rep("b", 2)))
+unfill(c(rep("a", 3), rep("b", 2)), value = "...")
+unfill(c(rep("a", 3), rep("b", 2)), "first")
+unfill(c(rep("a", 3), rep("b", 2)), "middle")
 }
 

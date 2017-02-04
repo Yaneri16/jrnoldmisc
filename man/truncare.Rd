@@ -33,4 +33,8 @@ replacements.
 The more intuitive name \code{truncate} was not chosen, because a base function \code{\link[base]{truncate}}
 already has that name. Truncare is the Latin origin of truncate.
 }
+\examples{
+truncare(1:10, left = 2, right = 5)
+censor(-5:5, 0, 4)
+}
 
