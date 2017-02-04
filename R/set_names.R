@@ -58,9 +58,9 @@ recode_names <- function(x, .f, ...) {
 #'   \code{\link[magrittr]{set_colnames}}, \code{\link[magrittr]{set_colnames}}.
 #' @export
 #' @examples
-#' set_names_seq(1:5)
-#' set_names_seq(1:5, "X%d")
-#' set_names_seq(1:5, function(i) stringr::str_c("Var_", i))
+#' set_names_idx(1:5)
+#' set_names_idx(1:5, "X%d")
+#' set_names_idx(1:5, function(i) stringr::str_c("Var_", i))
 set_names_idx <- function(x, .f = "Var%d", ...) {
   set_names(x, seq_names(seq_along(x), .f, ...))
 }
@@ -75,86 +75,12 @@ set_names_idx <- function(x, .f = "Var%d", ...) {
 #' @return Return table with renamed variables
 #' @export
 #' @examples
-#' set_names_str(c(a = 1, b = 2), c("beta" = "b"))
+#' replace_names(c(a = 1, b = 2), c("beta" = "b"))
 #' fruits <- c("one apple" = 1, "two pears" = 2, "three bananas" = 3)
-#' set_names_str(fruits, "[aeiou]", "-")
-#' set_names_str(fruits, "[aeiou]", "-", all = TRUE)
+#' replace_names(fruits, "[aeiou]", "-")
+#' replace_names(fruits, "[aeiou]", "-", all = TRUE)
 replace_names <- function(x, pattern, replacement, all = TRUE) {
   assert_that(is.flag(all))
-  if (all) {
-    set_names_map(x, str_replace_all, pattern, replacement)
-  } else {
-    set_names_map(x, str_replace, pattern, replacement)
-  }
+  .f <- if (all) str_replace_all else str_replace
+  set_names(x, .f(names(x), pattern, replacement))
 }
-
-
-#' Replace names in a vector
-#'
-#' Unlike \code{\link[purrr]{set_names}} changes a subset
-#' of names.
-#'
-#' @param x Vector to name
-#' @param nm Named character vector, where the names are the
-#'   the new names and the values are the old names.
-#' @return The vector \code{x} with new names.
-#' @export
-#' @examples
-#' replace_names(c(a = 1, b = 2), c("beta" = "b"))
-replace_names <- function(x, nm) {
-  oldnames <- names(x)
-  if (is.null(names(nm)) | any(names(nm) == "")) {
-    stop("All elements of 'nm' must be named.", call. = FALSE)
-  }
-  bad_names <- setdiff(nm, oldnames)
-  if (length(bad_names) > 0) {
-    stop("Not all names in 'nm' are in 'names(x)'.",
-         "Problem names: ", paste0(bad_names, collapse = ", "),
-         call. = FALSE)
-  }
-  newnames <- oldnames
-  for (i in seq_along(nm)) {
-    newnames[oldnames == nm[[i]]] <- names(nm)[[i]]
-  }
-  set_names(x, newnames)
-}
-
-#' Map over values and names simultaneoulsy
-#'
-#' These functions are helper functions for common case of
-#' iterating over both values and names of a vector in parallel.
-#' They are equivalent to \code{map2(.x, names(.x), .f, ...)}.
-#'
-#' @param .x A named vector
-#' @param .f A function.
-#' @param ... Additional arguments passed to \code{.f}
-#' @return \code{nmap} returns a list, \code{nmap_lgl} returns a logical vector,
-#'   \code{nmap_dbl} a numeric vector, \code{nmap_int} an integer vector,
-#'   and \code{nmap_df} a data frame.
-#' @export
-nmap <- function(.x, .f, ...) map2(.x, names(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_lgl <- function(.x, .f, ...) map2_lgl(.x, names2(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_dbl <- function(.x, .f, ...) map2_int(.x, names2(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_int <- function(.x, .f, ...) map2_dbl(.x, names2(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_int <- function(.x, .f, ...) map2_dbl(.x, names2(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_chr <- function(.x, .f, ...) map2_chr(.x, names2(.x), .f, ...)
-
-#' @export
-#' @rdname nmap
-nmap_df <- function(.x, .f, ...) map2_df(.x, names2(.x), .f, ...)
-

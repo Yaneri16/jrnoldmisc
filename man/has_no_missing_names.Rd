@@ -7,7 +7,7 @@
 has_no_missing_names(x)
 }
 \arguments{
-\item{An}{object}
+\item{x}{An object}
 }
 \value{
 A logical value

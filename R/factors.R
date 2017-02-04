@@ -40,24 +40,6 @@ fct_replace_all <- function(f, pattern, replacement) {
   .fct_replace(f, pattern, replacement, TRUE)
 }
 
-
-#' Transform levels of a factor with a function
-#'
-#' Change the factor levels by a function of their current values.
-#'
-#' @param f A factor
-#' @param .f A function that takes the current levels as its first argument.
-#' @param ... Arguments passed to \code{.f}.
-#' @return A factor vector with the values of \code{f} and transformed levels.
-#' @export
-fct_map <- function(f, .f, ...) {
-  warning("fct_map is deprecated, use fct_relabel in forcats >= 0.1.1.9000")
-  old_levels <- levels(f)
-  FUN <- as_function(.f)
-  new_levels <- FUN(old_levels, ...)
-  lvls_revalue(f, new_levels)
-}
-
 #' Transform levels of a factor with a function of their index
 #'
 #' Change the factor levels by a function or pattern based on their current
@@ -96,7 +78,7 @@ fct_seq <- function(f, .f = "%d", ...) {
 #'   remove factor levels and \code{\link[forcats]{fct_explicit_na}} which
 #'   is the inverse, converting `NA` to a factor level.
 #' @param f A factor
-#' @param levels Character vector of levels to remove
+#' @param lvls Character vector of levels to remove
 #' @return A factor
 #' @export
 #' @importFrom forcats lvls_revalue
@@ -104,9 +86,7 @@ fct_seq <- function(f, .f = "%d", ...) {
 #' f <- factor(c("Low", "Medium", "High",
 #'               "Refused to respond", "No response", "Not asked"))
 #' fct_remove(f, c("Refused to respond", "No response", "Not asked"))
-fct_remove <- function(f, levels = character()) {
+fct_remove <- function(f, lvls) {
   f <- check_factor(f)
-  new_levels <- levels(f)
-  new_levels[new_levels %in% levels] <- NA_integer_
-  lvls_revalue(f, new_levels)
+  factor(f, levels = setdiff(levels(f), as.character(lvls)))
 }

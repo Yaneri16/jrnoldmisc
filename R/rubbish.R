@@ -4,14 +4,14 @@
 #' @importFrom stats model.matrix
 #' @importFrom utils glob2rx
 #'
-#'
 #' @importFrom assertthat is.flag
-#' @importFrom assertthat on_failure<-
+#' @importFrom assertthat "on_failure<-"
 #' @importFrom dplyr arrange_
 #' @importFrom dplyr count_
 #' @importFrom dplyr current_vars
 #' @importFrom dplyr desc
 #' @importFrom dplyr distinct_
+#' @importFrom dplyr everything
 #' @importFrom dplyr filter
 #' @importFrom dplyr filter_
 #' @importFrom dplyr matches
@@ -33,6 +33,7 @@
 #' @importFrom purrr set_names
 #' @importFrom purrr as_function
 #' @importFrom purrr map
+#' @importFrom purrr map_lgl
 #' @importFrom purrr rerun
 #' @importFrom purrr reduce
 #' @importFrom purrr map_df
@@ -46,6 +47,7 @@
 #' @importFrom purrr is_character
 #' @importFrom stringr str_replace
 #' @importFrom stringr str_replace_all
+#' @importFrom purrr is_numeric
 #' @importFrom forcats lvls_revalue
 NULL
 
@@ -68,21 +70,5 @@ NULL
 "%==%" <- function(x, y) {
   z <- (is.na(x) & is.na(y)) | (is.nan(x) & is.nan(y)) | x == y
   z[is.na(z)] <- FALSE
-  z
-}
-
-#' Replace NA with FALSE
-#'
-#' @param x A logical vector
-#' @return The vector \code{x} with any \code{NA} values replaced with \code{FALSE}
-#'
-#' @export
-#' @examples
-#' x <- c(1, 2, NA) < 5
-#' x
-#' na2f(x)
-na2f <- function(x) {
-  z <- as.logical(x)
-  z[is.na(z)] <- NA
   z
 }

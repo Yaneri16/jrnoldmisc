@@ -2,24 +2,28 @@
 % Please edit documentation in R/set_names.R
 \name{replace_names}
 \alias{replace_names}
-\title{Replace names in a vector}
+\title{Set names in a vector by regular expression}
 \usage{
-replace_names(x, nm)
+replace_names(x, pattern, replacement, all = TRUE)
 }
 \arguments{
 \item{x}{Vector to name}
 
-\item{nm}{Named character vector, where the names are the
-the new names and the values are the old names.}
+\item{pattern, replacement}{Pattern and replacement strings. See \code{\link[stringr]{str_replace}}}
+
+\item{all}{Use \code{\link[stringr]{str_replace_all}},
+else use \code{\link[stringr]{str_replace}}.}
 }
 \value{
-The vector \code{x} with new names.
+Return table with renamed variables
 }
 \description{
-Unlike \code{\link[purrr]{set_names}} changes a subset
-of names.
+Set names in a vector by regular expression
 }
 \examples{
 replace_names(c(a = 1, b = 2), c("beta" = "b"))
+fruits <- c("one apple" = 1, "two pears" = 2, "three bananas" = 3)
+replace_names(fruits, "[aeiou]", "-")
+replace_names(fruits, "[aeiou]", "-", all = TRUE)
 }
 

@@ -11,7 +11,7 @@ has_names <- function(x) {
   !is.null(names(x)) & !all(names(x) == "") & !all(is.na(names(x)))
 }
 
-on_failure(has_names) <- function(call, env) {
+assertthat::on_failure(has_names) <- function(call, env) {
   paste0(deparse(call$x), " is not named")
 }
 
@@ -28,13 +28,13 @@ has_unique_names <- function(x) {
   any(dup_names)
 }
 
-on_failure(has_unique_names) <- function(call, env) {
+assertthat::on_failure(has_unique_names) <- function(call, env) {
   paste0(deparse(call$x), " has duplicate names.")
 }
 
 #' Check that all names in an object are not-missing
 #'
-#' @param An object
+#' @param x An object
 #' @return A logical value
 #' @export
 #' @examples
@@ -45,6 +45,6 @@ has_no_missing_names <- function(x) {
   !is.null(nm) & all(!is.na(nm)) & all(nm != "")
 }
 
-on_failure(has_no_missing_names) <- function(call, env) {
+assertthat::on_failure(has_no_missing_names) <- function(call, env) {
   paste0(deparse(call$x), " has missing names.")
 }

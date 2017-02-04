@@ -5,9 +5,9 @@
 \alias{filter_na_}
 \title{Filter rows with missing values}
 \usage{
-filter_na(.data, ..., .all = FALSE)
+filter_na(.data, ..., .all = FALSE, .finite = FALSE)
 
-filter_na_(.data, ..., .dots, .all = FALSE)
+filter_na_(.data, ..., .dots, .all = FALSE, .finite = FALSE)
 }
 \arguments{
 \item{.data}{A tbl}
@@ -18,6 +18,10 @@ which to test for missing values using the same semantics as
 
 \item{.all}{If \code{TRUE}, then remove rows in which all columns are
 missing, else select rows in which any column has a missing value.}
+
+\item{.finite}{For numeric columns, filter using \code{\link{is.finite}},
+which will drop rows with \code{NaN}, \code{-Inf}, and \code{Inf} values in
+addition to \code{NA}.}
 
 \item{.dots}{use \code{filter_na_()} to do standard evaluation. See
 \code{vignette("nse")} for details.}

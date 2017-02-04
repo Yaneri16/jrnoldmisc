@@ -4,12 +4,12 @@
 \alias{fct_remove}
 \title{Remove levels from a factor}
 \usage{
-fct_remove(f, levels = character())
+fct_remove(f, lvls)
 }
 \arguments{
 \item{f}{A factor}
 
-\item{levels}{Character vector of levels to remove}
+\item{lvls}{Character vector of levels to remove}
 }
 \value{
 A factor
