@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert column to dummy variables — to_dummies • rubbish</title>
+<title>Recode names of a vector — recode_names • rubbish</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -69,35 +69,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert column to dummy variables</h1>
+    <h1>Recode names of a vector</h1>
     </div>
 
     
-    <p><code>to_dummies</code> converts a column into multiple columns of dummy variables.
-<code>to_dummies_</code> is the standard evaluation version of this function.</p>
+    <p>Recode names of a vector</p>
     
 
-    <pre><span class='fu'>to_dummies</span>(<span class='no'>.data</span>, <span class='no'>col</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>, <span class='kw'>exclude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>to_dummies_</span>(<span class='no'>.data</span>, <span class='no'>col</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>, <span class='kw'>exclude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre><span class='fu'>recode_names</span>(<span class='no'>x</span>, <span class='no'>.f</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>.data</dt>
-      <dd>A tbl.</dd>
-      <dt>col</dt>
-      <dd>In <code>to_dummies</code>, the bare (unquoted) column name.
-In <code>to_dummies_</code>, a character vector with column name.</dd>
-      <dt>sep</dt>
-      <dd>The new variable names are constructed from <code>col</code> and the
-level value separated by <code>sep</code>.</dd>
-      <dt>exclude</dt>
-      <dd>Ignore these levels of <code>col</code> when creating variables.</dd>
+      <dt>x</dt>
+      <dd>A vector</dd>
+      <dt>.f</dt>
+      <dd>A named character vector or something that
+can be coerced into a function. If it is a function
+it must return a character vector the same length as
+<code>names(x)</code>.</dd>
+      <dt>...</dt>
+      <dd>Arguments passed to <code>.f</code> if it is a function.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tbl</p>
+    <p>The vector <code>x</code> with new names.</p>
     
 
   </div>

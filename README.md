@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# Rubbish: Miscellaneous R functions
-
-Some miscellaneous R functions, mostly tidyverse related.
-=======
 rubbish
 =======
 
@@ -112,4 +107,3 @@ Usage
 </tr>
 </tbody>
 </table>
->>>>>>> 06b35d8fa417e35b379369e159d03e9bdb6d937c

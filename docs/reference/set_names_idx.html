@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert column to dummy variables — to_dummies • rubbish</title>
+<title>Set names in a vector with sequential numbering — set_names_idx • rubbish</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -69,37 +69,44 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert column to dummy variables</h1>
+    <h1>Set names in a vector with sequential numbering</h1>
     </div>
 
     
-    <p><code>to_dummies</code> converts a column into multiple columns of dummy variables.
-<code>to_dummies_</code> is the standard evaluation version of this function.</p>
+    <p>Set the names in vector with a pattern based on sequential numbering,
+e.g. <code>Var1</code>, <code>Var2</code>, ...</p>
     
 
-    <pre><span class='fu'>to_dummies</span>(<span class='no'>.data</span>, <span class='no'>col</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>, <span class='kw'>exclude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>to_dummies_</span>(<span class='no'>.data</span>, <span class='no'>col</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>, <span class='kw'>exclude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre><span class='fu'>set_names_idx</span>(<span class='no'>x</span>, <span class='kw'>.f</span> <span class='kw'>=</span> <span class='st'>"Var%d"</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>.data</dt>
-      <dd>A tbl.</dd>
-      <dt>col</dt>
-      <dd>In <code>to_dummies</code>, the bare (unquoted) column name.
-In <code>to_dummies_</code>, a character vector with column name.</dd>
-      <dt>sep</dt>
-      <dd>The new variable names are constructed from <code>col</code> and the
-level value separated by <code>sep</code>.</dd>
-      <dt>exclude</dt>
-      <dd>Ignore these levels of <code>col</code> when creating variables.</dd>
+      <dt>x</dt>
+      <dd>An object to be named</dd>
+      <dt>.f</dt>
+      <dd>A character vector or function. If <code>.f</code> is a function,
+then its first argument will be the index numbers of the names.
+If <code>.f</code> is a character, then it should be a format string
+for <code>sprintf</code> pattern.</dd>
+      <dt>...</dt>
+      <dd>Arguments passed to <code>.f</code>.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tbl</p>
+    <p>The object <code>x</code> with its names (colnames, rownames) set.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/stats/topics/setNames'>setNames</a></code>, <code><a href='http://www.rdocumentation.org/packages/purrr/topics/set_names'>set_names</a></code>,
+  <code><a href='http://www.rdocumentation.org/packages/magrittr/topics/aliases'>set_colnames</a></code>, <code><a href='http://www.rdocumentation.org/packages/magrittr/topics/aliases'>set_colnames</a></code>.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>set_names_idx</span>(<span class='fl'>1</span>:<span class='fl'>5</span>)</div><div class='output co'>#&gt; Var1 Var2 Var3 Var4 Var5 
+#&gt;    1    2    3    4    5 </div><div class='input'><span class='fu'>set_names_idx</span>(<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='st'>"X%d"</span>)</div><div class='output co'>#&gt; X1 X2 X3 X4 X5 
+#&gt;  1  2  3  4  5 </div><div class='input'><span class='fu'>set_names_idx</span>(<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>function</span>(<span class='no'>i</span>) <span class='kw'>stringr</span><span class='kw'>::</span><span class='fu'>str_c</span>(<span class='st'>"Var_"</span>, <span class='no'>i</span>))</div><div class='output co'>#&gt; Var_1 Var_2 Var_3 Var_4 Var_5 
+#&gt;     1     2     3     4     5 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -107,7 +114,11 @@ level value separated by <code>sep</code>.</dd>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
