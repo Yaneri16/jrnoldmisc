@@ -19,4 +19,3 @@ Check that all names in an object are not-missing
 has_no_missing_names <- list(1, b = 1)
 has_no_missing_names <- list(a = 1, b = 1)
 }
-

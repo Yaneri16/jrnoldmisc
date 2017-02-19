@@ -28,4 +28,3 @@ fct_remove(f, c("Refused to respond", "No response", "Not asked"))
   remove factor levels and \code{\link[forcats]{fct_explicit_na}} which
   is the inverse, converting `NA` to a factor level.
 }
-

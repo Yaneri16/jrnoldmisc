@@ -19,4 +19,3 @@ Check that an object has names
 has_names(c(1, 2, 3))
 has_names(c(a = 1, b = 2, c = 3))
 }
-

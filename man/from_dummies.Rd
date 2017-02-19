@@ -30,4 +30,3 @@ A tbl with the additional column \code{col}.
 column.
 \code{from_dummies_} is the standard evaluation version.
 }
-

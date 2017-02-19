@@ -32,4 +32,3 @@ An object of the same class as \code{.data}.
 \description{
 Remove rows with missing values in variables that are selected.
 }
-

@@ -20,5 +20,7 @@ Like \code{x == y}, but not returning \code{NA} in tests involving
 x <- c(1, NA)
 y <- c(1, NA)
 
+x <- c(0, 1, NA, NaN, NA, NaN)
+y <- c(0, 0, NA, NaN, 0, 0)
+x \%==\% y
 }
-

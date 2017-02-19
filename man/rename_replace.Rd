@@ -20,4 +20,3 @@ Use a regular expression to rename tables.
 The function \code{rename_replace} applies \code{\link[stringr]{str_replace}} to the names of the table,
 while \code{rename_replace_all} applies \code{\link[stringr]{str_replace_all}}.
 }
-

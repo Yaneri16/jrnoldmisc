@@ -28,4 +28,3 @@ This is analagous to \code{\link[dplyr]{count}} which counts the number of
 rows by group. Alternatively, \code{\link[dplyr]{count}} is to \code{\link[base]{table}}
 as \code{prop} is to \code{\link[base]{prop.table}}.
 }
-

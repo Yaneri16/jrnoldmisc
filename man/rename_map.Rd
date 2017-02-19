@@ -16,4 +16,3 @@ rename_map(.data, .f, ...)
 \description{
 Rename tables with a function
 }
-

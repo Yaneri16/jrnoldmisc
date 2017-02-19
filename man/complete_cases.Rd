@@ -27,10 +27,9 @@ Filter a table by keeping only rows with no missing values.
 This is more tidyverse friendly version of \code{complete.cases}, and
 saves writing potentially long \code{\link[dplyr]{filter}} expressions.
 }
-\author{
-Jan Schultz
-}
 \references{
 \url{http://stackoverflow.com/a/37031161/227406}
 }
-
+\author{
+Jan Schultz
+}

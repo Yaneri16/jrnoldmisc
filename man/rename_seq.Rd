@@ -19,4 +19,3 @@ nubmer as its first argument.}
 \description{
 Rename tables with sequentially numbered variables
 }
-

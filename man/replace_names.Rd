@@ -26,4 +26,3 @@ fruits <- c("one apple" = 1, "two pears" = 2, "three bananas" = 3)
 replace_names(fruits, "[aeiou]", "-")
 replace_names(fruits, "[aeiou]", "-", all = TRUE)
 }
-

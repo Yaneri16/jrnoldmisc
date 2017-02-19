@@ -16,4 +16,3 @@ scale_y_log2(...)
 Constructs log 2 continuous scales for \code{ggplot2}, similar
 to \code{\link[ggplot2]{scale_x_log10}}.
 }
-

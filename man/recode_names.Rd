@@ -13,6 +13,8 @@ recode_names(x, .f, ...)
 can be coerced into a function. If it is a function
 it must return a character vector the same length as
 \code{names(x)}.}
+
+\item{...}{Arguments passed to \code{.f} if it is a function.}
 }
 \value{
 The vector \code{x} with new names.
@@ -20,4 +22,3 @@ The vector \code{x} with new names.
 \description{
 Recode names of a vector
 }
-

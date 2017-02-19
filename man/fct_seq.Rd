@@ -22,4 +22,3 @@ A factor vector with the values of \code{f} and transformed levels.
 Change the factor levels by a function or pattern based on their current
 order, .e.g. 1, 2, 3, ....
 }
-

@@ -30,4 +30,3 @@ string, meaning it must start at the start, and end at the the end.
 This function uses \code{\link[utils]{glob2rx}} to convert the globbing pattern
 to a regex,
 }
-

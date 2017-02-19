@@ -21,11 +21,17 @@ prop <- function(x, ..., wt = NULL, sort = FALSE) {
 #' @rdname prop
 #' @export
 prop_ <- function(x, vars, wt = NULL, sort = FALSE) {
-  p <- ungroup(count_(x, vars, wt = wt))
-  p <- mutate_(p, .prop = ~ n / sum(n))
-  p <- select_(p, ~ -n)
+  x <- count_(x, vars, wt = wt)
+  g <- groups(x)
+  # only makes sense to divide by total wt. Otherwise there is no
+  # way to roll up the proportions because wt of each group is
+  # lost.
+  x <- mutate_(ungroup(x), .prop = ~ n / sum(n))
+  # restore grouping similar to count
+  x <- group_by_(x, .dots = lazyeval::as.lazy_dots(g))
+  x <- select_(x, ~ -n)
   if (sort) {
-    p <- arrange_(p, desc(~ .prop))
+    x <- arrange_(x, desc(~ .prop))
   }
-  p
+  x
 }

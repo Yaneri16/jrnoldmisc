@@ -28,4 +28,3 @@ This function is more flexible than \code{\link[dplyr]{between}}.
 betwixt(-2:4, 0, 3)
 betwixt(-2:4, 0, 3, leq = FALSE, geq = FALSE)
 }
-

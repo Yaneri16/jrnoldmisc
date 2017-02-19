@@ -18,6 +18,7 @@ seq_names <- function(.x, .f, ...) {
 #'   can be coerced into a function. If it is a function
 #'   it must return a character vector the same length as
 #'   \code{names(x)}.
+#' @param ... Arguments passed to \code{.f} if it is a function.
 #' @param x A vector
 #' @return The vector \code{x} with new names.
 #' @export
@@ -37,7 +38,7 @@ recode_names <- function(x, .f, ...) {
     new_names <- set_names(old_names, old_names)
     new_names[old_names] <- .f
   } else if (is_function(.f)) {
-    new_names <- as_function(.f)(old_names)
+    new_names <- as_function(.f)(old_names, ...)
   }
   set_names(x, new_names)
 }

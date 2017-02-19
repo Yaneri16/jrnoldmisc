@@ -34,4 +34,3 @@ can be seen as the inverse of \code{\link[tibble]{enframe}}.
 select_col(iris, Species)
 select_col_(iris, "Species")
 }
-

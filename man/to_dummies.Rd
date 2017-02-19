@@ -27,4 +27,3 @@ A tbl
 \code{to_dummies} converts a column into multiple columns of dummy variables.
 \code{to_dummies_} is the standard evaluation version of this function.
 }
-

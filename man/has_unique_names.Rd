@@ -19,4 +19,3 @@ Check that an object has unique names
 has_unique_names(list(a = 1, b = 2))
 has_unique_names(list(a = 1, a = 2))
 }
-

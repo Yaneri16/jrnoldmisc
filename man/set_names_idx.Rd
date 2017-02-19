@@ -32,4 +32,3 @@ set_names_idx(1:5, function(i) stringr::str_c("Var_", i))
 \code{\link[stats]{setNames}}, \code{\link[purrr]{set_names}},
   \code{\link[magrittr]{set_colnames}}, \code{\link[magrittr]{set_colnames}}.
 }
-

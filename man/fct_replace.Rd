@@ -24,4 +24,3 @@ Replace the factor levels with a regular expression.
 \code{\link[stringr]{str_replace}}, while \code{fct_replace_all} uses
 \code{\link[stringr]{str_replace_all}}
 }
-

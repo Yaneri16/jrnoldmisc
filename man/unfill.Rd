@@ -29,4 +29,3 @@ unfill(c(rep("a", 3), rep("b", 2)), value = "...")
 unfill(c(rep("a", 3), rep("b", 2)), "first")
 unfill(c(rep("a", 3), rep("b", 2)), "middle")
 }
-

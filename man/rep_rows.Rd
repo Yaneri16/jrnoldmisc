@@ -25,4 +25,3 @@ x <- tibble(a = 1:2, b = 3:4)
 rep_rows(x, 2)
 rep_rows(x, each = 2)
 }
-
