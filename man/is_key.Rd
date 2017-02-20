@@ -17,6 +17,10 @@ is_key_(.data, ..., .dots)
 \item{.dots}{Used to work around non-standard evaluation.
 See vignette("nse") for details.}
 }
+\value{
+\code{TRUE} if the variables jointly identify all
+  rows, and \code{FALSE} otherwise.
+}
 \description{
 Check if a combination of variable(s) uniquely identify
 rows of a table.

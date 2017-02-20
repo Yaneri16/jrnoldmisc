@@ -7,7 +7,7 @@
 #' @param ... Variables to check whether they are keys
 #' @param .dots Used to work around non-standard evaluation.
 #'   See vignette("nse") for details.
-#' @returns \code{TRUE} if the variables jointly identify all
+#' @return \code{TRUE} if the variables jointly identify all
 #'   rows, and \code{FALSE} otherwise.
 #' @export
 is_key <- function(.data, ...) {
