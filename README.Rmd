@@ -14,29 +14,4 @@ Miscellaneous R functions, mostly [tidyverse](http://tidyverse.org/) related.
 install_github("jrnold/rubbish")
 ```
 
-## Usage
 
--------------------- -------------------------------------------------------------------
-`%==%`               Equivalent to `(x == y) | (is.na(x) & is.na(y))`
-`betwixt`            A more flexible `between`
-`censor`             Censor a vector
-`complete_cases`     Filter data frame by complete cases
-`fct_map`            Replace factor levels using a function
-`fct_remove`         Remove factor levels
-`fct_replace`        Replace factor levels using regular expressions
-`fct_seq`            Replace factor levels using a sequence-based pattern
-`filter_na`          Filter a table to remove rows with missing values
-`from_dummies`       Create a categorical vector from multiple dummy variables.
-`glob`               Use globbing to select variables in `dplyr`
-`prop`               Proportion of observations by group
-`rename_map`         Rename columns in a `tbl` with a function
-`rename_replace`     Rename columns in a `tbl` with a regular expression
-`rename_seq`         Rename columns in a `tbl` with sequential names
-`rep_rows`           Repeat rows in a data frame
-`select_col`         Select a single column of a data frame and return a vector
-`set_names_map`      Set names of a vector with a function
-`set_names_seq`      Set names of a vector sequentially
-`to_dummies`         Create dummy variables from a categorical vector
-`truncare`           Truncate a vector
-`unfill`             Sparsify a vector by removing repeated values
--------------------- -------------------------------------------------------------------
