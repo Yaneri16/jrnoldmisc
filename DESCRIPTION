@@ -32,9 +32,11 @@ Imports:
     magrittr,
     purrr,
     scales,
-    stringr
+    stringr,
+    tidyr
 RoxygenNote: 6.0.1
 Suggests:
+    modelr,
     pkgdown,
     testthat,
     tibble
