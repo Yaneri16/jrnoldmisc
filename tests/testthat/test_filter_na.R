@@ -36,8 +36,3 @@ test_that("filter_na works with .finite = FALSE and Inf values", {
   expect_equivalent(filter_na(x, a, b, .finite = FALSE),
                     x[c(1, 5, 6), ])
 })
-
-test_that("filter_na_ works", {
-  expect_equivalent(complete_cases_(x, ~a, "d"),
-                    x[1:2, ])
-})

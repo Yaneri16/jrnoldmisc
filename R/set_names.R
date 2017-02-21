@@ -1,17 +1,3 @@
-# Copied from dplyr:::names2
-names2 <- function(x) {
-  names(x) %||% rep("", length(x))
-}
-
-seq_names <- function(.x, .f, ...) {
-  assert_that(is.string(.f) | is.function(.f))
-  if (is.character(.f)) {
-    sprintf(.f, .x, ...)
-  } else {
-    as_function(.f)(.x, ...)
-  }
-}
-
 #' Recode names of a vector
 #'
 #' @param .f A named character vector or something that
@@ -40,7 +26,7 @@ recode_names <- function(x, .f, ...) {
   } else if (is_function(.f)) {
     new_names <- as_function(.f)(old_names, ...)
   }
-  set_names(x, new_names)
+  set_names(x, unname(new_names))
 }
 
 #' Set names in a vector with sequential numbering
@@ -62,8 +48,8 @@ recode_names <- function(x, .f, ...) {
 #' set_names_idx(1:5)
 #' set_names_idx(1:5, "X%d")
 #' set_names_idx(1:5, function(i) stringr::str_c("Var_", i))
-set_names_idx <- function(x, .f = "Var%d", ...) {
-  set_names(x, seq_names(seq_along(x), .f, ...))
+set_names_idx <- function(x, .f = "%d", ...) {
+  set_names(x, make_seq_names(seq_along(x), .f, ...))
 }
 
 

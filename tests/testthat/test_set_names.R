@@ -4,7 +4,7 @@ x <- c("a", "b", "c")
 X <- matrix(1:6, nrow = 2)
 
 test_that("set_names_idx works with defaults", {
-  expect_named(set_names_idx(x), paste0("Var", seq_along(x)))
+  expect_named(set_names_idx(x), as.character(seq_along(x)))
 })
 
 test_that("set_names_idx works with character", {

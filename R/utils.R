@@ -1,3 +1,19 @@
+# Copied from dplyr:::names2
+names2 <- function(x) {
+  names(x) %||% rep("", length(x))
+}
+
+
+make_seq_names <- function(.x, .f, ...) {
+  assert_that(is.string(.f) || is.function(.f) || is_formula1(.x))
+  if (is.character(.f)) {
+    sprintf(.f, .x, ...)
+  } else {
+    # only handle formulas or other functions
+    purrr::as_function(.f)(.x, ...)
+  }
+}
+
 # From tidyr:::append_df
 append_df <- function(x, values, after = length(x)) {
   y <- append(x, values, after = after)

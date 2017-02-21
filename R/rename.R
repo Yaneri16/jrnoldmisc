@@ -7,10 +7,9 @@
 #' @param ... Additional arguments to pass to \code{.f}
 #' @param .data A data frame
 #' @export
-rename_seq <- function(.data, .f = "Var%d", ...) {
-  assert_that(is.string(.f) || is.function(.f))
-  oldnames <- names(.data)
-  newnames <- seq_names(seq_along(oldnames), .f, ...)
+rename_idx <- function(.data, .f = "Var%d", ...) {
+  oldnames <- tbl_vars(.data)
+  newnames <- make_seq_names(seq_along(oldnames), .f, ...)
   rename_(.data, .dots = set_names(oldnames, newnames))
 }
 
@@ -22,7 +21,8 @@ rename_seq <- function(.data, .f = "Var%d", ...) {
 #' @param ... Additional arguments to pass to \code{.f}
 #' @export
 rename_map <- function(.data, .f, ...) {
-  oldnames <- names(.data)
+  # use tbl_vars so more general
+  oldnames <- tbl_vars(.data)
   newnames <- as_function(.f)(oldnames, ...)
   rename_(.data, .dots = set_names(oldnames, newnames))
 }
@@ -34,15 +34,12 @@ rename_map <- function(.data, .f, ...) {
 #' while \code{rename_replace_all} applies \code{\link[stringr]{str_replace_all}}.
 #'
 #' @param .data A data frame
+#' @param all If \code{TRUE}, the replace all patterns, else replace only the
+#'   the first pattern.
 #' @param pattern,replacement Pattern and replacement regular expressions.
 #'   See \code{\link[stringr]{str_replace}}.
 #' @export
-rename_replace  <- function(.data, pattern, replacement) {
-  rename_map(.data, str_replace, pattern, replacement)
-}
-
-#' @rdname rename_replace
-#' @export
-rename_replace_all <- function(.data, pattern, replacement) {
-  rename_map(.data, str_replace_all, pattern, replacement)
+rename_sub  <- function(.data, pattern, replacement, all = TRUE) {
+  .f <- if (all) str_replace_all else str_replace
+  rename_map(.data, .f, pattern, replacement)
 }

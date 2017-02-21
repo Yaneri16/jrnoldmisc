@@ -1,5 +1,5 @@
 # copied from forcats:::check_factor
-check_factor <- function (f) {
+check_factor <- function(f) {
   if (is.character(f)) {
     factor(f)
   }
@@ -11,33 +11,48 @@ check_factor <- function (f) {
   }
 }
 
-.fct_replace <- function(f, pattern, replacement, all) {
-  FUN <- if (all) str_replace_all else str_replace
-  old_levels <- levels(f)
-  new_levels <- FUN(old_levels, pattern, replacement)
-  lvls_revalue(f, new_levels)
+#' Is a one- or two-sided formula?
+#'
+#' Functions to test whether an object is a one- or two-sided formula.
+#'
+#' @param x An object to test
+#' @return \code{TRUE} or \code{FALSE}
+#' @seealso \code{\link[purrr]{is_formula}} in \pkg{purrr} and \code{\link[lazyeval]{is_formula}} in \pkg{lazyeval} both test objects for formula.
+#' @export
+#' @examples
+#' is_formula2(y ~ x)
+#' is_formula2(~ x)
+#' is_formula1(y ~ x)
+#' is_formula1(~ x)
+is_formula2 <- function(x) {
+  purrr::is_formula(x) && (length(x) == 3)
+}
+
+
+#' @rdname is_formula2
+#' @export
+is_formula1 <- function(x) {
+  purrr::is_formula(x) && (length(x) == 2)
 }
 
 #' Transform levels of a factor with a regular expression
 #'
 #' Replace the factor levels with a regular expression.
-#' \code{fct_replace} replaces the factor levels using
-#' \code{\link[stringr]{str_replace}}, while \code{fct_replace_all} uses
-#' \code{\link[stringr]{str_replace_all}}
+#' \code{fct_replace} replaces the factor levels using a regular
 #'
 #' @param f A factor
 #' @param pattern,replacement Pattern and replacement regular expressions.
 #'   See \code{\link[stringr]{str_replace}}.
+#' @param all If \code{TRUE}, replace all occurences of \code{pattern},
+#'   otherwise replace only the firt occurrence.
 #' @return A factor vector with the values of \code{f} and transformed levels.
 #' @export
-fct_replace <- function(f, pattern, replacement) {
-  .fct_replace(f, pattern, replacement, FALSE)
-}
-
-#' @rdname fct_replace
-#' @export
-fct_replace_all <- function(f, pattern, replacement) {
-  .fct_replace(f, pattern, replacement, TRUE)
+fct_sub <- function(f, pattern, replacement, all = TRUE) {
+  f <- check_factor(f)
+  FUN <- if (all) str_replace_all else str_replace
+  old_levels <- levels(f)
+  new_levels <- FUN(old_levels, pattern, replacement)
+  lvls_revalue(f, new_levels)
 }
 
 #' Transform levels of a factor with a function of their index
@@ -52,21 +67,9 @@ fct_replace_all <- function(f, pattern, replacement) {
 #' @param ... Arguments passed to \code{.f} if it is a function.
 #' @return A factor vector with the values of \code{f} and transformed levels.
 #' @export
-fct_seq <- function(f, .f = "%d", ...) {
-  if (!(is.function(.f) || is.character(.f))) {
-    stop("Expected a function or string, got ", class(.f)[[1L]], call. = FALSE)
-  }
-  if (is.character(.f) && length(.f) > 1) {
-    stop("Expected a character vector of length 1, but got one with length ",
-         length(.f), call. = FALSE)
-  }
-  idx <- seq_along(levels(f))
-  if (is.character(.f)) {
-    new_levels <- sprintf(.f, idx)
-  } else {
-    new_levels <- .f(idx, ...)
-  }
-  lvls_revalue(f, new_levels)
+fct_idx <- function(f, .f = "%d", ...) {
+  f <- check_factor(f)
+  lvls_revalue(f, make_seq_names(seq_along(levels(f)), .f, ...))
 }
 
 #' Remove levels from a factor

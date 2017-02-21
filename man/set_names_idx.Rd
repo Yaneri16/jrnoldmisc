@@ -4,7 +4,7 @@
 \alias{set_names_idx}
 \title{Set names in a vector with sequential numbering}
 \usage{
-set_names_idx(x, .f = "Var\%d", ...)
+set_names_idx(x, .f = "\%d", ...)
 }
 \arguments{
 \item{x}{An object to be named}
