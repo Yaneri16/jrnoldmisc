@@ -9,6 +9,8 @@ Authors@R: c(person("Jeffrey", "Arnold",
                     comment = "some code from tidyr"),
              person("RStudio", role = "cph", 
                     comment = "some code from tidyr"),
+             person("R Core Team", role = "cph",
+                    comment = "some code from lm and glm"),
              person("Jan", "Schultz", role = "cph",
                      comment = "code for complete_cases"))
 Description: Miscellaneous functions, mostly tidyverse related.

@@ -1,1 +1,3 @@
-# 0.1.0.9999
+# 0.2.0
+
+- Add function `lm_preprocess`
