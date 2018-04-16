@@ -6,7 +6,7 @@
 #' replacements.
 #'
 #' @details  The more intuitive name \code{truncate} was not chosen, because a base function \code{\link[base]{truncate}}
-#' already has that name. Truncare is the Latin origin of truncate.
+#' already has that name. \emph{Truncare} is the Latin origin of truncate.
 #'
 #' @param x A vector
 #' @param left,right Boundary values for truncation
@@ -45,7 +45,7 @@ censor <- function(x, left = -Inf, right = Inf) {
 #' This function is more flexible than \code{\link[dplyr]{between}}.
 #'
 #' @param x Numeric vector of values
-#' @param left,right Bountary values
+#' @param left,right Boundary values
 #' @param geq,leq Use \code{>=} (\code{<=}) else use \code{>} (\code{<}) for testing
 #'   the boundaries.
 #' @param na.rm If \code{TRUE} return \code{FALSE} for \code{NA} or \code{NaN}

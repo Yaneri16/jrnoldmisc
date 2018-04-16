@@ -3,8 +3,6 @@
 export("%==%")
 export(betwixt)
 export(censor)
-export(data_grid)
-export(data_grid_)
 export(fct_idx)
 export(fct_remove)
 export(fct_sub)

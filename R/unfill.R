@@ -1,4 +1,4 @@
-#' Unfill a vector
+#' Un-fill a vector
 #'
 #' Replace repeated runs of a value in a vector with a single
 #' value.

@@ -12,7 +12,7 @@ rename_idx(.data, .f = "Var\%d", ...)
 \item{.f}{Either a string or function. If a string, then it is a
 \code{sprintf} in which the 1st pattern will be replaced with the variable
 index number. If a function, then it is a function that takes the index
-nubmer as its first argument.}
+number as its first argument.}
 
 \item{...}{Additional arguments to pass to \code{.f}}
 }

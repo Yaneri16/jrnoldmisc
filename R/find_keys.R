@@ -3,10 +3,10 @@
 #' Check if a combination of variable(s) uniquely identify
 #' rows of a table.
 #'
-#' @param .data a tbl
+#' @param .data a \code{tbl}
 #' @param ... Variables to check whether they are keys
 #' @param .dots Used to work around non-standard evaluation.
-#'   See vignette("nse") for details.
+#'   See \code{vignette("nse")} for details.
 #' @return \code{TRUE} if the variables jointly identify all
 #'   rows, and \code{FALSE} otherwise.
 #' @export

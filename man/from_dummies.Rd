@@ -10,7 +10,7 @@ from_dummies(.data, col, vars, .default = NA_character_)
 from_dummies_(.data, col, vars, .default = NA_character_)
 }
 \arguments{
-\item{.data}{A tbl}
+\item{.data}{A \code{tbl}}
 
 \item{col}{In \code{from_dummies}, the bare (unquoted) column name.
 In \code{from_dummies_}, a character vector with column name.}
@@ -23,7 +23,7 @@ These variables will be coerced to \code{logical}.}
 are \code{FALSE}.}
 }
 \value{
-A tbl with the additional column \code{col}.
+A \code{tbl} with the additional column \code{col}.
 }
 \description{
 \code{from_dummies} converts dummy variable columns to a categorical variable

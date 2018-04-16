@@ -1,4 +1,4 @@
-Package: rubbish
+Package: jrnoldmisc
 Type: Package
 Title: Miscellaneous functions
 Version: 0.2.0
@@ -36,7 +36,9 @@ Imports:
     tidyr
 RoxygenNote: 6.0.1
 Suggests:
+    spelling,
     modelr,
     pkgdown,
     testthat,
     tibble
+Language: en-US

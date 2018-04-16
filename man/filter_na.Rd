@@ -10,7 +10,7 @@ filter_na(.data, ..., .all = FALSE, .finite = FALSE)
 filter_na_(.data, ..., .dots, .all = FALSE, .finite = FALSE)
 }
 \arguments{
-\item{.data}{A tbl}
+\item{.data}{A \code{tbl}}
 
 \item{...}{Comma separated list of unquoted expressions. Select variables
 which to test for missing values using the same semantics as

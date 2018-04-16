@@ -10,7 +10,7 @@ prop(x, ..., wt = NULL, sort = FALSE)
 prop_(x, vars, wt = NULL, sort = FALSE)
 }
 \arguments{
-\item{x}{A tbl}
+\item{x}{A \code{tbl}.}
 
 \item{wt}{If omitted, will the number of rows. If specified, will perform a "weighted" proportion by summing the (non-missing) values of variable \code{wt}.}
 
@@ -19,12 +19,12 @@ prop_(x, vars, wt = NULL, sort = FALSE)
 \item{vars, ...}{Variables to group by}
 }
 \value{
-A tbl with the grouping variables and column \code{.prop} with the
+A \code{tbl} with the grouping variables and column \code{.prop} with the
   proportion in each group.
 }
 \description{
 \code{prop} calculates the proportion of observations by group.
-This is analagous to \code{\link[dplyr]{count}} which counts the number of
+This is analaguous to \code{\link[dplyr]{count}} which counts the number of
 rows by group. Alternatively, \code{\link[dplyr]{count}} is to \code{\link[base]{table}}
 as \code{prop} is to \code{\link[base]{prop.table}}.
 }

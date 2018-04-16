@@ -2,7 +2,7 @@
 % Please edit documentation in R/unfill.R
 \name{unfill}
 \alias{unfill}
-\title{Unfill a vector}
+\title{Un-fill a vector}
 \usage{
 unfill(x, tokeep = c("first", "last", "middle"), value = NA)
 }

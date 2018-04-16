@@ -15,7 +15,7 @@ is_key_(.data, ..., .dots)
 \item{...}{Variables to check whether they are keys}
 
 \item{.dots}{Used to work around non-standard evaluation.
-See vignette("nse") for details.}
+See \code{vignette("nse")} for details.}
 }
 \value{
 \code{TRUE} if the variables jointly identify all

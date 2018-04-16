@@ -1,13 +1,13 @@
-rubbish
-=======
+Jrnold’s miscellaneous
+======================
 
 Miscellaneous R functions, mostly [tidyverse](http://tidyverse.org/)
-related.
+related. This also includes many functions that I use in teaching.
 
 Install
 -------
 
-**rubbish** is not on CRAN, install it from github with:
+**jrnoldmisc** is not on CRAN, install it from GitHub with:
 
     # install.packages("devtools")
-    install_github("jrnold/rubbish")
+    install_github("jrnold/jrnold")

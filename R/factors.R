@@ -44,7 +44,7 @@ is_formula1 <- function(x) {
 #' @param pattern,replacement Pattern and replacement regular expressions.
 #'   See \code{\link[stringr]{str_replace}}.
 #' @param all If \code{TRUE}, replace all occurences of \code{pattern},
-#'   otherwise replace only the firt occurrence.
+#'   otherwise replace only the first occurrence.
 #' @return A factor vector with the values of \code{f} and transformed levels.
 #' @export
 fct_sub <- function(f, pattern, replacement, all = TRUE) {

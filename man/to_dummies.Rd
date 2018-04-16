@@ -10,7 +10,7 @@ to_dummies(.data, col, sep = "_", exclude = NULL)
 to_dummies_(.data, col, sep = "_", exclude = NULL)
 }
 \arguments{
-\item{.data}{A tbl.}
+\item{.data}{A \code{tbl}.}
 
 \item{col}{In \code{to_dummies}, the bare (unquoted) column name.
 In \code{to_dummies_}, a character vector with column name.}
@@ -21,7 +21,7 @@ level value separated by \code{sep}.}
 \item{exclude}{Ignore these levels of \code{col} when creating variables.}
 }
 \value{
-A tbl
+A \code{tbl}.
 }
 \description{
 \code{to_dummies} converts a column into multiple columns of dummy variables.

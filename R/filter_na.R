@@ -2,7 +2,7 @@
 #'
 #' Remove rows with missing values in variables that are selected.
 #'
-#' @param .data A tbl
+#' @param .data A \code{tbl}
 #' @param ... Comma separated list of unquoted expressions. Select variables
 #'   which to test for missing values using the same semantics as
 #'   \code{\link[dplyr]{select}}.

@@ -1,4 +1,4 @@
 library(testthat)
-library(rubbish)
+library(jrnoldmisc)
 
-test_check("rubbish")
+test_check("jrnoldmisc")

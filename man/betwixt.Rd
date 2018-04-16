@@ -10,7 +10,7 @@ betwixt(x, left = -Inf, right = Inf, leq = TRUE, geq = TRUE,
 \arguments{
 \item{x}{Numeric vector of values}
 
-\item{left, right}{Bountary values}
+\item{left, right}{Boundary values}
 
 \item{geq, leq}{Use \code{>=} (\code{<=}) else use \code{>} (\code{<}) for testing
 the boundaries.}
