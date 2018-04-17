@@ -10,7 +10,7 @@ is_key(.data, ...)
 is_key_(.data, ..., .dots)
 }
 \arguments{
-\item{.data}{a tbl}
+\item{.data}{a \code{tbl}}
 
 \item{...}{Variables to check whether they are keys}
 
