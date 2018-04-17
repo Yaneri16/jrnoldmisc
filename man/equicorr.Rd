@@ -2,7 +2,7 @@
 % Please edit documentation in R/equicorr.R
 \name{equicorr}
 \alias{equicorr}
-\title{Create a equicorrelated matrix}
+\title{Create an equicorrelated matrix}
 \usage{
 equicorr(k, rho = 0, scale = NULL)
 }

@@ -20,7 +20,7 @@ is where the expansion functions look for variable names.}
 A \code{formula} object
 }
 \description{
-Formula inerpolation to expand functions in a formula into lists of
+Formula interpolation to expand functions in a formula into lists of
 variables. The interpolation provided here are convenience functions for
 formulae used in modeling applications.
 }
@@ -34,7 +34,7 @@ The following special interpolation functions are provided:
 \item{\code{.p(.f, sep = "+")} matches all objects in \code{envir} that
    satisfy the predicate function \code{.f}}
 \item{\code{.m(pattern, sep = "+")} matches all names in \code{envir} that
-   match the regualar expression \code{pattern}.}
+   match the regular expression \code{pattern}.}
 }
 }
 \examples{

@@ -44,11 +44,11 @@ process_ivreg <- function(ret, x, conf.int = FALSE, conf.level = 0.95) {
   ret
 }
 
-#' Tidiers for ivreg objects
+#' Tidiers for \code{ivreg} objects
 #'
 #' Tidiers for \code{ivreg} objects returned by the
 #'
-#' These methods tidy the coefficients of an intstrumental
+#' These methods tidy the coefficients of an instrumental
 #' variable model produced by the \pkg{AER} function
 #' \code{\link[AER]{ivreg}} into a summary, augment the
 #' original data with information on the fitted values

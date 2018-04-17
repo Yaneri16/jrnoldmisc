@@ -36,7 +36,7 @@ expand_call <- function(x, envir = parent.frame()) {
 
 #' Formula interpolation
 #'
-#' Formula inerpolation to expand functions in a formula into lists of
+#' Formula interpolation to expand functions in a formula into lists of
 #' variables. The interpolation provided here are convenience functions for
 #' formulae used in modeling applications.
 #'
@@ -51,7 +51,7 @@ expand_call <- function(x, envir = parent.frame()) {
 #' \item{\code{.p(.f, sep = "+")} matches all objects in \code{envir} that
 #'    satisfy the predicate function \code{.f}}
 #' \item{\code{.m(pattern, sep = "+")} matches all names in \code{envir} that
-#'    match the regualar expression \code{pattern}.}
+#'    match the regular expression \code{pattern}.}
 #' }
 #'
 #' @param f A formula

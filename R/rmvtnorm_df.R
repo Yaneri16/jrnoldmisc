@@ -11,6 +11,7 @@
 #' @param df The degrees of freedom. If \code{Inf}, then the data are
 #'   simulated from a normal distribution.
 #' @param loc A vector of locations.
+#' @param R A correlation matrix.
 #' @return A \code{\link[tibble]{tibble}} with \code{length(loc)}
 #'   columns and \code{n} rows.
 #' @export
@@ -18,7 +19,8 @@
 #' @importFrom tibble as_tibble
 rmvtnorm_df <- function(n, loc = 0,
                         scale = rep(1, length(loc)),
-                        R = diag(length(loc)), df = Inf) {
+                        R = diag(length(loc)),
+                        df = Inf) {
   template <- "X{.idx}"
   sigma <- sdcor2cov(scale, R)
   X <- if (is.finite(df)) {

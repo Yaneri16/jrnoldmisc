@@ -1,4 +1,4 @@
-#' Create a equicorrelated matrix
+#' Create an equicorrelated matrix
 #'
 #' Create an correlation matrix in which all off-diagonal
 #' elements are equal,
